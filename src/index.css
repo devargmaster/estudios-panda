@@ -545,29 +545,29 @@ nav a:not(.tienda-link):hover:after {
 
 /* Estilos específicos por estudio */
 .studio-a .studio-hero-content h1 {
-  color: var(--studio-a-accent);
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 2px 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.studio-a .studio-subtitle {
-  color: var(--studio-a-primary);
-}
-
-.studio-a .btn {
-  background: var(--studio-a-gradient);
-}
-
-.studio-b .studio-hero-content h1 {
   color: var(--studio-b-accent);
   text-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-.studio-b .studio-subtitle {
+.studio-a .studio-subtitle {
   color: var(--studio-b-primary);
 }
 
-.studio-b .btn {
+.studio-a .btn {
   background: var(--studio-b-gradient);
+}
+
+.studio-b .studio-hero-content h1 {
+  color: var(--studio-a-accent);
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.studio-b .studio-subtitle {
+  color: var(--studio-a-primary);
+}
+
+.studio-b .btn {
+  background: var(--studio-a-gradient);
 }
 
 /* Studio Details */
@@ -628,42 +628,42 @@ nav a:not(.tienda-link):hover:after {
 
 /* Estilos específicos para Estudio A */
 .studio-a-card {
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  background: rgba(212, 175, 55, 0.05);
-}
-
-.studio-a-card:hover {
-  border-color: var(--studio-a-accent);
-  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
-}
-
-.studio-a-card .studio-content h3 {
-  color: var(--studio-a-accent);
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-.studio-a-card .btn {
-  background: var(--studio-a-gradient);
-}
-
-/* Estilos específicos para Estudio B */
-.studio-b-card {
   border: 1px solid rgba(14, 165, 233, 0.3);
   background: rgba(14, 165, 233, 0.05);
 }
 
-.studio-b-card:hover {
+.studio-a-card:hover {
   border-color: var(--studio-b-accent);
   box-shadow: 0 20px 60px rgba(14, 165, 233, 0.4);
 }
 
-.studio-b-card .studio-content h3 {
+.studio-a-card .studio-content h3 {
   color: var(--studio-b-accent);
   text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
 }
 
-.studio-b-card .btn {
+.studio-a-card .btn {
   background: var(--studio-b-gradient);
+}
+
+/* Estilos específicos para Estudio B */
+.studio-b-card {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.studio-b-card:hover {
+  border-color: var(--studio-a-accent);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+}
+
+.studio-b-card .studio-content h3 {
+  color: var(--studio-a-accent);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.studio-b-card .btn {
+  background: var(--studio-a-gradient);
 }
 
 .studio-image {
@@ -716,14 +716,14 @@ nav a:not(.tienda-link):hover:after {
 
 .studio-content li:before {
   content: "✓";
-  color: var(--studio-a-accent);
+  color: var(--studio-b-accent);
   position: absolute;
   left: 0;
   font-weight: bold;
 }
 
 .studio-b-card .studio-content li:before {
-  color: var(--studio-b-accent);
+  color: var(--studio-a-accent);
 }
 
 .studio-content .btn {
