@@ -26,8 +26,8 @@ COPY --from=build /app/dist /usr/share/nginx/html
 # Copiar configuración personalizada de nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Crear nginx.conf mínimo
-RUN echo 'events { worker_connections 1024; } http { include /etc/nginx/mime.types; include /etc/nginx/conf.d/*.conf; }' > /etc/nginx/nginx.conf
+# Crear nginx.conf con configuración completa
+RUN echo 'events { worker_connections 1024; } http { include /etc/nginx/mime.types; default_type application/octet-stream; sendfile on; keepalive_timeout 65; include /etc/nginx/conf.d/*.conf; }' > /etc/nginx/nginx.conf
 
 # Exponer puerto 80
 EXPOSE 80
