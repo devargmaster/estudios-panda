@@ -476,6 +476,100 @@ nav a:not(.tienda-link):hover:after {
   font-weight: 500;
 }
 
+/* Páginas de Estudios */
+.studio-page {
+  min-height: 100vh;
+}
+
+.studio-hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 50%, #1a202c 100%);
+  background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.studio-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.studio-hero .container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.studio-hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.studio-subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.studio-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.studio-hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos específicos por estudio */
+.studio-a .studio-hero-content h1 {
+  color: var(--studio-a-accent);
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.studio-a .studio-subtitle {
+  color: var(--studio-a-primary);
+}
+
+.studio-a .btn {
+  background: var(--studio-a-gradient);
+}
+
+.studio-b .studio-hero-content h1 {
+  color: var(--studio-b-accent);
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.studio-b .studio-subtitle {
+  color: var(--studio-b-primary);
+}
+
+.studio-b .btn {
+  background: var(--studio-b-gradient);
+}
+
 /* Studio Details */
 .studio-details {
   max-width: 800px;
@@ -530,6 +624,46 @@ nav a:not(.tienda-link):hover:after {
   transform: translateY(-10px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos específicos para Estudio A */
+.studio-a-card {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.studio-a-card:hover {
+  border-color: var(--studio-a-accent);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4);
+}
+
+.studio-a-card .studio-content h3 {
+  color: var(--studio-a-accent);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.studio-a-card .btn {
+  background: var(--studio-a-gradient);
+}
+
+/* Estilos específicos para Estudio B */
+.studio-b-card {
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  background: rgba(14, 165, 233, 0.05);
+}
+
+.studio-b-card:hover {
+  border-color: var(--studio-b-accent);
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.4);
+}
+
+.studio-b-card .studio-content h3 {
+  color: var(--studio-b-accent);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.studio-b-card .btn {
+  background: var(--studio-b-gradient);
 }
 
 .studio-image {
