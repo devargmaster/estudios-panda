@@ -22,3 +22,23 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment files (solo incluimos los template)
+.env
+.env.local
+.env.*.local
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Production config (crear copia local)
+.env.production.local
+
+# Coverage reports
+coverage
+*.lcov
+
+# OS generated files
+Thumbs.db
+.DS_Store

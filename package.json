@@ -9,7 +9,13 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "docker:dev": "./dev.sh start",
+    "docker:stop": "./dev.sh stop",
+    "docker:build": "./dev.sh build",
+    "docker:logs": "./dev.sh logs",
+    "docker:clean": "./dev.sh clean",
+    "docker:deploy": "./deploy.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

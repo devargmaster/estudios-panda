@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  estudios-panda:
+    build: .
+    container_name: estudios-panda-app
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    networks:
+      - panda-network
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      # Labels para Traefik (si usas Traefik como proxy reverso)
+      - "traefik.enable=true"
+      - "traefik.http.routers.estudios-panda.rule=Host(`estudios-panda.tu-dominio.com`)"
+      - "traefik.http.routers.estudios-panda.entrypoints=websecure"
+      - "traefik.http.routers.estudios-panda.tls.certresolver=letsencrypt"
+      - "traefik.http.services.estudios-panda.loadbalancer.server.port=80"
+      
+      # Labels para nginx-proxy (si usas nginx-proxy)
+      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
+
+networks:
+  panda-network:
+    driver: bridge
+
+# Volúmenes para persistencia si es necesario
+volumes:
+  nginx-logs:
+    driver: local
