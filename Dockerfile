@@ -1,6 +1,6 @@
 # Dockerfile para Estudios Panda React App
 # Imagen base con Node.js
-FROM node:18-alpine as build
+FROM node:20-alpine AS build
 
 # Establecer directorio de trabajo
 WORKDIR /app
@@ -8,8 +8,8 @@ WORKDIR /app
 # Copiar package.json y package-lock.json
 COPY package*.json ./
 
-# Instalar dependencias
-RUN npm ci --only=production
+# Instalar dependencias (incluir devDependencies para el build)
+RUN npm ci
 
 # Copiar código fuente
 COPY . .
