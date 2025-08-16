@@ -1,13 +1,138 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const ImageCarousel = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToNext = () => {
+    setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
+  };
+
+  if (!images || images.length === 0) {
+    return <div style={{color: 'white', padding: '20px'}}>No hay imágenes disponibles</div>;
+  }
+
+  return (
+    <div className="carousel-container">
+      <div className="carousel-wrapper">
+        <img 
+          src={images[currentIndex].src} 
+          alt={images[currentIndex].alt}
+          style={{
+            width: '100%',
+            height: '400px',
+            objectFit: 'cover',
+            borderRadius: '15px'
+          }}
+        />
+        <div className="carousel-caption">
+          <h4>{images[currentIndex].title}</h4>
+          <p>{images[currentIndex].description}</p>
+        </div>
+        
+        <button 
+          className="carousel-btn carousel-btn-prev" 
+          onClick={goToPrevious}
+          style={{
+            position: 'absolute',
+            left: '10px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            background: 'rgba(255,255,255,0.3)',
+            border: 'none',
+            color: 'white',
+            padding: '10px 15px',
+            borderRadius: '50%',
+            cursor: 'pointer'
+          }}
+        >
+          &#8249;
+        </button>
+        <button 
+          className="carousel-btn carousel-btn-next" 
+          onClick={goToNext}
+          style={{
+            position: 'absolute',
+            right: '10px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            background: 'rgba(255,255,255,0.3)',
+            border: 'none',
+            color: 'white',
+            padding: '10px 15px',
+            borderRadius: '50%',
+            cursor: 'pointer'
+          }}
+        >
+          &#8250;
+        </button>
+      </div>
+      
+      <div style={{display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '10px'}}>
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            style={{
+              width: '12px',
+              height: '12px',
+              borderRadius: '50%',
+              border: 'none',
+              background: index === currentIndex ? '#38bdf8' : 'rgba(255,255,255,0.4)',
+              cursor: 'pointer'
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const EstudioA = () => {
+  // Imágenes del carrusel del Estudio A
+  const studioImages = [
+    {
+      src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      alt: "Consola de mezcla profesional",
+      title: "Consola Analógica Premium",
+      description: "Consola de mezcla de alta gama con 64 canales y procesamiento vintage"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      alt: "Sala de grabación amplia",
+      title: "Sala de Grabación Principal",
+      description: "120m² de espacio acústicamente tratado para bandas completas"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      alt: "Equipo outboard vintage",
+      title: "Outboard Vintage Collection",
+      description: "Compresores, EQs y efectos analógicos de las mejores marcas"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      alt: "Micrófofos profesionales",
+      title: "Microfonía Selecta",
+      description: "Colección de micrófonos de condensador, dinámicos y de cinta"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      alt: "Monitores de estudio",
+      title: "Sistema de Monitoreo",
+      description: "Monitores de referencia y auriculares para mezcla de precisión"
+    }
+  ];
+
   return (
     <div className="studio-page">
       {/* Hero Estudio A */}
       <div className="hero">
         <div className="hero-overlay"></div>
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content-centered">
             <div className="studio-indicator">
               <span className="current-studio">ESTUDIO A</span>
             </div>
@@ -22,9 +147,30 @@ const EstudioA = () => {
               <a href="https://api.whatsapp.com/send?phone=541162218021&text=🐼" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                 CONTACTANOS
               </a>
-              <a href="#caracteristicas" className="btn btn-secondary">
-                VER CARACTERÍSTICAS
+              <a href="#galeria" className="btn btn-secondary">
+                VER GALERÍA
               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Galería del Estudio A */}
+      <div className="section section-dark" id="galeria">
+        <div className="container">
+          <h2>GALERÍA DEL ESTUDIO A</h2>
+          <p className="section-subtitle">
+            Descubre nuestras instalaciones y equipamiento de primer nivel
+          </p>
+          <div className="gallery-carousel-container">
+            <div style={{
+              background: 'rgba(0,0,0,0.3)', 
+              padding: '30px', 
+              borderRadius: '20px',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}>
+              <ImageCarousel images={studioImages} />
             </div>
           </div>
         </div>
@@ -127,6 +273,62 @@ const EstudioA = () => {
               <h4>Colaboraciones Internacionales</h4>
               <p>Grabaciones con artistas de Estados Unidos, España y Brasil</p>
               <span className="award">Múltiples nominaciones Grammy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Servicios Especializados */}
+      <div className="section section-dark">
+        <div className="container">
+          <h2>SERVICIOS ESPECIALIZADOS</h2>
+          <p className="section-subtitle">
+            Servicios profesionales adaptados a las necesidades de cada proyecto
+          </p>
+          
+          <div className="services-grid">
+            <div className="service-card">
+              <div className="service-icon">🎛️</div>
+              <h3>GRABACIÓN MULTIPISTA</h3>
+              <p>Grabación simultánea de hasta 64 canales con sincronización perfecta para bandas y orquestas.</p>
+              <ul>
+                <li>Grabación en vivo</li>
+                <li>Overdubs profesionales</li>
+                <li>Edición de precisión</li>
+              </ul>
+            </div>
+            
+            <div className="service-card">
+              <div className="service-icon">🎚️</div>
+              <h3>MEZCLA ANALÓGICA</h3>
+              <p>Mezcla en consola analógica con procesamiento outboard vintage para ese sonido cálido y característico.</p>
+              <ul>
+                <li>Compresores vintage</li>
+                <li>EQs analógicos</li>
+                <li>Efectos de hardware</li>
+              </ul>
+            </div>
+            
+            <div className="service-card">
+              <div className="service-icon">💎</div>
+              <h3>MASTERIZACIÓN</h3>
+              <p>Masterización profesional con monitores de referencia y procesadores de alta gama.</p>
+              <ul>
+                <li>Mastering para streaming</li>
+                <li>Mastering para vinilo</li>
+                <li>Versiones para radio</li>
+              </ul>
+            </div>
+            
+            <div className="service-card">
+              <div className="service-icon">🎼</div>
+              <h3>PRODUCCIÓN MUSICAL</h3>
+              <p>Servicios de producción integral desde la preproducción hasta el producto final.</p>
+              <ul>
+                <li>Arreglos musicales</li>
+                <li>Sesiones de músicos</li>
+                <li>Dirección artística</li>
+              </ul>
             </div>
           </div>
         </div>

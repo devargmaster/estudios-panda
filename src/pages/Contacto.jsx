@@ -42,7 +42,7 @@ ${formData.message}`;
       <div className="hero">
         <div className="hero-overlay"></div>
         <div className="container">
-          <div className="contact-hero-content">
+          <div className="hero-content-centered">
             <div className="studio-indicator">
               <span className="current-studio">CONTACTO</span>
             </div>
@@ -53,12 +53,20 @@ ${formData.message}`;
             <p className="hero-description">
               Desde 1980 ayudamos a artistas a materializar su visión musical. Contanos sobre tu proyecto y te asesoramos sobre la mejor manera de llevarlo adelante.
             </p>
+            <div className="hero-buttons">
+              <a href="https://api.whatsapp.com/send?phone=541162218021&text=🐼" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                CONTACTANOS
+              </a>
+              <a href="#contacto-info" className="btn btn-secondary">
+                VER INFORMACIÓN
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Información de Contacto */}
-      <div className="section section-dark">
+      <div className="section section-dark" id="contacto-info">
         <div className="container">
           <h2>INFORMACIÓN DE CONTACTO</h2>
           
