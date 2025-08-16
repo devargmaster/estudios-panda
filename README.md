@@ -39,7 +39,7 @@ Sitio web profesional para Estudios Panda - El estudio de grabación latinoameri
 ### Instalación
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/estudios-panda.git
+git clone https://github.com/devargmaster/estudios-panda.git
 
 # Navegar al directorio
 cd estudios-panda
