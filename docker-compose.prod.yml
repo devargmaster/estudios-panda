@@ -11,10 +11,9 @@ services:
       - proxy
     environment:
       - NODE_ENV=production
-      - VIRTUAL_HOST=hitflow.com.ar
-      - VIRTUAL_PATH=/estudios-panda
+      - VIRTUAL_HOST=estudios-panda.hitflow.com.ar
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=hitflow.com.ar
+      - LETSENCRYPT_HOST=estudios-panda.hitflow.com.ar
       - LETSENCRYPT_EMAIL=tu-email@dominio.com
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/"]
