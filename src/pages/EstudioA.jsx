@@ -2,204 +2,191 @@ import React from 'react';
 
 const EstudioA = () => {
   return (
-    <div className="studio-page studio-a">
+    <div className="studio-page">
       {/* Hero Estudio A */}
-      <div className="studio-hero">
+      <div className="hero">
         <div className="hero-overlay"></div>
         <div className="container">
-          <div className="studio-hero-content">
-            <h1>ESTUDIO A</h1>
-            <p className="studio-subtitle">El espacio ideal y el más equipado</p>
-            <p className="studio-description">
-              Nuestro Estudio A es el estudio principal, diseñado para producciones de alto nivel 
-              y artistas internacionales que buscan la máxima calidad en sus grabaciones.
+          <div className="hero-content">
+            <div className="studio-indicator">
+              <span className="current-studio">ESTUDIO A</span>
+            </div>
+            <h1 className="hero-title">EL ESPACIO IDEAL</h1>
+            <p className="hero-subtitle">
+              Nuestro Estudio A es el espacio ideal y el más equipado para producciones de gran envergadura
             </p>
-          </div>
-          <div className="studio-hero-image">
-            <img src="https://estudiospanda.com.ar/wp-content/uploads/2023/03/3.png" alt="Estudio A" />
+            <p className="hero-description">
+              Desde 1980, el estudio de Latinoamérica que destaca en el mundo. Contamos con más créditos en producciones ganadoras de premios internacionales, entre ellos Grammys latinos e internacionales, Billboard Awards y Premios Gardel.
+            </p>
+            <div className="hero-buttons">
+              <a href="https://api.whatsapp.com/send?phone=541162218021&text=🐼" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                CONTACTANOS
+              </a>
+              <a href="#caracteristicas" className="btn btn-secondary">
+                VER CARACTERÍSTICAS
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Características principales */}
-      <div className="section">
+      {/* Características del Estudio A */}
+      <div className="section section-dark" id="caracteristicas">
         <div className="container">
           <h2>CARACTERÍSTICAS DEL ESTUDIO A</h2>
-          <div className="studio-features">
-            <div className="feature-grid">
-              <div className="feature-item">
-                <div className="feature-icon">🎛️</div>
-                <h3>Consola SSL</h3>
-                <p>Consola SSL de 32 canales con la calidad y el sonido característico que han utilizado los estudios más prestigiosos del mundo.</p>
-              </div>
-              
-              <div className="feature-item">
-                <div className="feature-icon">💻</div>
-                <h3>Pro Tools HDX</h3>
-                <p>Sistema Pro Tools HDX de última generación para grabación digital de máxima calidad y sin latencia.</p>
-              </div>
-              
-              <div className="feature-item">
-                <div className="feature-icon">🔊</div>
-                <h3>Monitoreo Premium</h3>
-                <p>Monitores Genelec de campo cercano y lejano para una referencia de audio impecable.</p>
-              </div>
-              
-              <div className="feature-item">
-                <div className="feature-icon">🎤</div>
-                <h3>Micrófonos Vintage</h3>
-                <p>Amplia selección de micrófonos vintage y modernos: Neumann, AKG, Shure, Coles, entre otros.</p>
-              </div>
-              
-              <div className="feature-item">
-                <div className="feature-icon">🏠</div>
-                <h3>Sala Amplia</h3>
-                <p>Sala de grabación de 40m² con acústica tratada profesionalmente para todo tipo de instrumentos.</p>
-              </div>
-              
-              <div className="feature-item">
-                <div className="feature-icon">🎸</div>
-                <h3>Amplificadores</h3>
-                <p>Colección de amplificadores vintage y modernos: Marshall, Fender, Vox, Mesa Boogie.</p>
-              </div>
+          <p className="section-subtitle">
+            El estudio más amplio y versátil de nuestras instalaciones, diseñado para grabaciones de bandas completas y producciones de gran formato.
+          </p>
+          
+          <div className="services-grid">
+            <div className="service-card">
+              <div className="service-icon">🎛️</div>
+              <h3>CONSOLA DE MEZCLA</h3>
+              <p>Consola analógica profesional de alta gama con capacidad para múltiples canales y procesamiento de señal premium.</p>
+            </div>
+            
+            <div className="service-card">
+              <div className="service-icon">🎸</div>
+              <h3>SALA AMPLIA</h3>
+              <p>Espacio de grabación de 120m² con techos altos, ideal para sesiones de bandas completas y instrumentos acústicos.</p>
+            </div>
+            
+            <div className="service-card">
+              <div className="service-icon">🎚️</div>
+              <h3>OUTBOARD PREMIUM</h3>
+              <p>Procesadores analógicos de última generación, compresores vintage y efectos profesionales.</p>
+            </div>
+            
+            <div className="service-card">
+              <div className="service-icon">🎤</div>
+              <h3>MICRÓFONOS SELECTOS</h3>
+              <p>Colección de micrófonos de condensador, dinámicos y de cinta de las mejores marcas mundiales.</p>
+            </div>
+            
+            <div className="service-card">
+              <div className="service-icon">🎧</div>
+              <h3>MONITOREO DE PRECISIÓN</h3>
+              <p>Monitores de estudio de referencia y sistemas de auriculares profesionales para mezcla crítica.</p>
+            </div>
+            
+            <div className="service-card">
+              <div className="service-icon">💿</div>
+              <h3>GRABACIÓN DIGITAL</h3>
+              <p>Sistema Pro Tools HDX con conversores de alta definición para máxima calidad de audio.</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Equipamiento técnico */}
-      <div className="section section-dark">
-        <div className="container">
-          <h2>EQUIPAMIENTO TÉCNICO</h2>
-          <div className="equipment-section">
-            <div className="equipment-category">
-              <h3>Consola y Audio Digital</h3>
-              <ul>
-                <li>Consola SSL 4000 E/G+ Series</li>
-                <li>Pro Tools HDX con interfaces Avid</li>
-                <li>Conversores Antelope Audio Orion 32+</li>
-                <li>Preamplificadores Neve 1073, API 512c</li>
-              </ul>
-            </div>
-            
-            <div className="equipment-category">
-              <h3>Micrófonos</h3>
-              <ul>
-                <li>Neumann U67, U87, U47 FET</li>
-                <li>AKG C12, C414, D112</li>
-                <li>Shure SM57, SM58, Beta 52A</li>
-                <li>Coles 4038 (Ribbon)</li>
-                <li>Royer R-121 (Ribbon)</li>
-              </ul>
-            </div>
-            
-            <div className="equipment-category">
-              <h3>Monitoreo</h3>
-              <ul>
-                <li>Genelec 1032A (Principales)</li>
-                <li>Yamaha NS-10M Studio</li>
-                <li>Auratone 5C Super Sound Cube</li>
-                <li>Subwoofer Genelec 7060B</li>
-              </ul>
-            </div>
-            
-            <div className="equipment-category">
-              <h3>Outboard y Efectos</h3>
-              <ul>
-                <li>Compresor Empirical Labs Distressor</li>
-                <li>EQ Pultec EQP-1A</li>
-                <li>Reverb Lexicon 480L</li>
-                <li>Delay TC Electronic 2290</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Trabajos realizados */}
+      {/* Proyectos Destacados */}
       <div className="section">
         <div className="container">
-          <h2>TRABAJOS REALIZADOS EN ESTUDIO A</h2>
-          <div className="studio-portfolio">
-            <div className="portfolio-item featured">
-              <div className="portfolio-image">🎼</div>
-              <div className="portfolio-content">
-                <h4>La Portuaria</h4>
-                <p>Frenkel, Bilinkis, Schachtel</p>
-                <span className="award">🏆 Premio Gardel 2024</span>
-                <p className="project-description">
-                  Grabación completa del nuevo álbum con técnicas analógicas y digitales combinadas.
-                </p>
-              </div>
+          <h2>PROYECTOS DESTACADOS</h2>
+          <p className="section-subtitle">
+            Algunos de los trabajos más reconocidos realizados en nuestro Estudio A
+          </p>
+          
+          <div className="portfolio-grid">
+            <div className="portfolio-item">
+              <div className="portfolio-image">🏆</div>
+              <h4>La Portuaria</h4>
+              <p>Grabación y mezcla de álbum ganador de Premio Gardel</p>
+              <span className="award">Grammy Latino - Mejor Álbum Rock</span>
             </div>
             
             <div className="portfolio-item">
-              <div className="portfolio-image">🎻</div>
-              <div className="portfolio-content">
-                <h4>Música Clásica Contemporánea</h4>
-                <p>Orquesta Sinfónica Nacional</p>
-                <span className="award">🏆 Grammy Latino 2023</span>
-                <p className="project-description">
-                  Grabación de música clásica con técnicas de microfonía avanzada.
-                </p>
-              </div>
+              <div className="portfolio-image">🎵</div>
+              <h4>Frenkel</h4>
+              <p>Producción completa de álbum debut aclamado por la crítica</p>
+              <span className="award">Billboard Award - Artista Revelación</span>
+            </div>
+            
+            <div className="portfolio-item">
+              <div className="portfolio-image">🎼</div>
+              <h4>Bilinkis</h4>
+              <p>Grabación de sinfónico con orquesta de 40 músicos</p>
+              <span className="award">Premios Gardel - Mejor Álbum Instrumental</span>
+            </div>
+            
+            <div className="portfolio-item">
+              <div className="portfolio-image">🎹</div>
+              <h4>Schachtel</h4>
+              <p>Proyecto experimental de música electrónica y jazz</p>
+              <span className="award">Mejor Álbum Alternativo</span>
+            </div>
+            
+            <div className="portfolio-item">
+              <div className="portfolio-image">🥇</div>
+              <h4>Nuevo Tesoro Musical</h4>
+              <p>Compilado de artistas emergentes grabado íntegramente en Estudio A</p>
+              <span className="award">Disco de Oro - Ventas</span>
             </div>
             
             <div className="portfolio-item">
               <div className="portfolio-image">🎺</div>
-              <div className="portfolio-content">
-                <h4>Jazz Fusion Internacional</h4>
-                <p>Varios Artistas</p>
-                <span className="award">🏆 Disco de Platino</span>
-                <p className="project-description">
-                  Proyecto colaborativo con músicos de jazz de Argentina, Brasil y Uruguay.
-                </p>
-              </div>
+              <h4>Colaboraciones Internacionales</h4>
+              <p>Grabaciones con artistas de Estados Unidos, España y Brasil</p>
+              <span className="award">Múltiples nominaciones Grammy</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Reservas y contacto */}
-      <div className="section section-studio">
+      {/* Contacto Rápido */}
+      <div className="section">
         <div className="container">
-          <h2>RESERVÁ EL ESTUDIO A</h2>
-          <div className="booking-section">
-            <div className="booking-info">
-              <h3>Tarifas y Disponibilidad</h3>
-              <div className="rate-item">
-                <strong>Sesión de 4 horas</strong>
-                <p>Incluye ingeniero de grabación y asistente</p>
+          <h2>RESERVA TU SESIÓN</h2>
+          <p className="section-subtitle">
+            Contactanos para conocer disponibilidad y tarifas del Estudio A
+          </p>
+          
+          <div className="contact-grid">
+            <div>
+              <div className="contact-item">
+                <strong>WhatsApp Directo:</strong>
+                <p>
+                  <a href="https://api.whatsapp.com/send?phone=541162218021&text=🐼%20Consulta%20sobre%20Estudio%20A" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     style={{color: 'var(--current-accent)', textDecoration: 'none'}}>
+                    +54 11 6221-8021
+                  </a>
+                </p>
               </div>
-              <div className="rate-item">
-                <strong>Sesión de 8 horas</strong>
-                <p>Día completo con descuento especial</p>
+              
+              <div className="contact-item">
+                <strong>Email:</strong>
+                <p>estudioa@estudiospanda.com.ar</p>
               </div>
-              <div className="rate-item">
-                <strong>Proyecto completo</strong>
-                <p>Cotización personalizada según el proyecto</p>
+              
+              <div className="contact-item">
+                <strong>Horarios:</strong>
+                <p>Lunes a Viernes: 9:00 - 22:00<br />Sábados: 10:00 - 20:00</p>
               </div>
-              <p className="booking-note">
-                * Todos los precios incluyen equipamiento básico e ingeniería.
-                * Consultar por servicios adicionales como músicos sesionistas.
-              </p>
+              
+              <div className="contact-item">
+                <strong>Ubicación:</strong>
+                <p>Buenos Aires, Argentina<br />Palermo - Villa Crespo</p>
+              </div>
             </div>
             
-            <div className="booking-form">
-              <h3>Solicitar Reserva</h3>
+            <div className="contact-form">
+              <h3>Consulta Rápida</h3>
               <form>
-                <input type="text" placeholder="Nombre del artista/banda" required />
-                <input type="email" placeholder="Email de contacto" required />
-                <input type="tel" placeholder="Teléfono" required />
-                <input type="date" placeholder="Fecha preferida" required />
+                <input type="text" placeholder="Nombre completo" required />
+                <input type="email" placeholder="Email" required />
+                <input type="tel" placeholder="Teléfono" />
                 <select required>
-                  <option value="">Duración de la sesión</option>
-                  <option value="4h">4 horas</option>
-                  <option value="8h">8 horas</option>
-                  <option value="proyecto">Proyecto completo</option>
+                  <option value="">Tipo de proyecto</option>
+                  <option value="album">Álbum completo</option>
+                  <option value="single">Single/EP</option>
+                  <option value="demo">Demo</option>
+                  <option value="mixing">Solo mezcla</option>
+                  <option value="mastering">Solo masterización</option>
+                  <option value="other">Otro</option>
                 </select>
-                <textarea placeholder="Detalles del proyecto (género, cantidad de músicos, instrumentos, etc.)" required></textarea>
-                <button type="submit" className="btn btn-primary">Solicitar Reserva</button>
+                <textarea placeholder="Comentario o mensaje" rows="4"></textarea>
+                <button type="submit" className="btn btn-primary">ENVIAR</button>
               </form>
             </div>
           </div>

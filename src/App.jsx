@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import Home from './pages/Home'
 import EstudioA from './pages/EstudioA'
 import EstudioB from './pages/EstudioB'
+import Albumes from './pages/Albumes'
+import Servicios from './pages/Servicios'
+import Contacto from './pages/Contacto'
 import pandaLogo from './assets/pandalogo.png'
 import './App.css'
 
@@ -37,6 +40,24 @@ function Header() {
             >
               ESTUDIO B
             </Link>
+            <Link 
+              to="/albumes" 
+              className={location.pathname === '/albumes' ? 'active' : ''}
+            >
+              ÁLBUMES
+            </Link>
+            <Link 
+              to="/servicios" 
+              className={location.pathname === '/servicios' ? 'active' : ''}
+            >
+              SERVICIOS
+            </Link>
+            <Link 
+              to="/contacto" 
+              className={location.pathname === '/contacto' ? 'active' : ''}
+            >
+              CONTACTO
+            </Link>
           </div>
         </nav>
       </div>
@@ -50,6 +71,7 @@ function AppContent() {
   const getStudioClass = () => {
     if (location.pathname === '/estudio-a') return 'studio-a'
     if (location.pathname === '/estudio-b') return 'studio-b'
+    // Las páginas generales mantienen el tema dorado por defecto
     return 'studio-general'
   }
 
@@ -61,6 +83,9 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/estudio-a" element={<EstudioA />} />
           <Route path="/estudio-b" element={<EstudioB />} />
+          <Route path="/albumes" element={<Albumes />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </main>
     </div>

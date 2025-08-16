@@ -2,7 +2,7 @@ import React from 'react';
 
 const EstudioB = () => {
   return (
-    <div className="studio-page studio-b">
+    <div className="studio-page">
       {/* Hero Estudio B */}
       <div className="studio-hero">
         <div className="hero-overlay"></div>
