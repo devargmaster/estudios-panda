@@ -8,15 +8,16 @@ services:
     expose:
       - "80"
     networks:
-      - nginx-proxy
+      - proxy
     environment:
       - NODE_ENV=production
-      - VIRTUAL_HOST=estudios-panda.tu-dominio.com
+      - VIRTUAL_HOST=hitflow.com.ar
+      - VIRTUAL_PATH=/estudios-panda
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=estudios-panda.tu-dominio.com
+      - LETSENCRYPT_HOST=hitflow.com.ar
       - LETSENCRYPT_EMAIL=tu-email@dominio.com
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/estudios-panda/"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -25,7 +26,7 @@ services:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
 
 networks:
-  nginx-proxy:
+  proxy:
     external: true
 
 # Si necesitas volúmenes para logs o datos
